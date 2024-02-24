@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;600;700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffff0;
+}
+
+a,
+h4,
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+.page {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header {
+  font-family: "Dancing Script", cursive;
+  margin-top: 24px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  margin: 0 auto;
+  font-size: 48px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 120px;
+}
+
+nav {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #dbc1ac;
+  padding: 18px 0;
+  border: 8px solid #967259;
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+}
+
+nav a {
+  text-decoration: none;
+  color: #634832;
+  font-size: 20px;
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 65vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 0 24px;
+}
+
+.hero h2 {
+  font-family: "Dancing Script", cursive;
+  color: white;
+  font-size: 48px;
+  text-align: center;
+}
+
+main {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+main section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+main section h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+  width: 100%;
+  text-align: center;
+}
+
+main article {
+  width: 30%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #dbc1ac;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f8f8d5;
+  min-width: 340px;
+  align-self: stretch;
+}
+
+main article img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #dbc1ac;
+  margin-top: 24px;
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+footer section {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer-logo {
+  width: 220px;
+}
+
+.icon {
+  width: 40px;
+}
+
+.icon-small {
+  width: 20px;
+}
+
+.align-vertical {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hours p {
+  margin: 8px 0;
+  color: #634832;
+  font-size: 14px;
+}
+
+.about a {
+  text-decoration: none;
+  color: #634832;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.scrollTop a {
+  padding: 24px;
+  color: #636363;
+  border-radius: 10px;
+  border: 2px solid #636363;
+  width: fit-content;
+}
+
+.scrollTop a:hover {
+  background-color: #c9aa91;
+}
+
+.scrollTop img {
+  width: 28px;
+}
+
+@media only screen and (max-width: 780px) {
+  .page {
+    padding: 0;
+  }
+
+  header {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  header h1 {
+    font-size: 36px;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  footer {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scrollTop {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+  }
+}
