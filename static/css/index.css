@@ -1,16 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;600;700&display=swap");
 
-html,
-body {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
+  box-sizing: border-box;
   background-color: #fffff0;
 }
 
@@ -18,118 +21,145 @@ a,
 h4,
 p {
   font-family: "Poppins", sans-serif;
-}
-
-.page {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-header {
-  font-family: "Dancing Script", cursive;
-  margin-top: 24px;
-  height: 120px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header h1 {
-  margin: 0 auto;
-  font-size: 48px;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 120px;
-}
-
-nav {
-  width: 100%;
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-around;
-  background-color: #dbc1ac;
-  padding: 18px 0;
-  border: 8px solid #967259;
-  position: sticky;
-  top: 0;
-  box-sizing: border-box;
-}
-
-nav a {
-  text-decoration: none;
-  color: #634832;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .hero {
-  background-image: url("../images/hero.jpg");
+  background-image: linear-gradient(to right, #f8f8d58f, #dbc1ac97),
+    url("../images/hero.jpg");
   background-position: center;
   background-size: cover;
-  height: 65vh;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  margin-top: 24px;
-  padding: 0 24px;
-}
-
-.hero h2 {
-  font-family: "Dancing Script", cursive;
-  color: white;
-  font-size: 48px;
-  text-align: center;
-}
-
-main {
-  margin-top: 36px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  align-items: center;
+  justify-content: space-between;
+  height: 85vh;
+  padding: 5vh 2rem;
 }
 
-main section {
+.hero__header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.hero__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 6.4rem;
+}
+
+.hero__logo {
+  height: 20rem;
+}
+
+.hero__slogan {
+  font-family: "Nunito", sans-serif;
+  font-size: 4.8rem;
+  text-align: center;
+}
+
+.menu {
+  padding: 10rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.menu__section {
+  display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem 4rem;
 }
 
-main section h3 {
-  font-family: "Dancing Script", cursive;
-  font-size: 32px;
-  width: 100%;
+.menu__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 5rem;
   text-align: center;
-}
-
-main article {
-  width: 30%;
-  padding: 12px;
-  box-sizing: border-box;
-  border: 2px solid #dbc1ac;
-  border-radius: 10px;
-  text-align: center;
-  background-color: #f8f8d5;
-  min-width: 340px;
-  align-self: stretch;
-}
-
-main article img {
   width: 100%;
-  height: 300px;
-  border-radius: 10px;
+}
+
+.menu__card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  width: 35rem;
+  border-radius: 1rem;
+}
+
+.menu__side {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  transition: all 0.8s ease;
+  overflow: hidden;
+  border-radius: 0.6rem;
+}
+
+.menu__side-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__side-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dbc1ac;
+}
+
+.menu__photo-front {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu__item--name-front {
+  display: inline-block;
+  font-size: 2rem;
+  margin-top: -6rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1.2rem;
+}
+
+.menu__photo-back {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  position: relative;
+}
+
+.menu__item--name-back {
+  font-size: 2rem;
+}
+
+.menu__item--description {
+  font-size: 1.8rem;
+  margin-top: auto;
+  padding: 0 2.5rem 2.5rem;
+}
+
+.menu__card:hover .menu__side-front {
+  transform: rotateY(-180deg);
+}
+
+.menu__card:hover .menu__side-back {
+  transform: rotateY(0);
 }
 
 footer {
   background-color: #dbc1ac;
-  margin-top: 24px;
-  padding: 24px 48px;
+  margin-top: 2.4rem;
+  padding: 2.4rem 4.8rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -147,72 +177,70 @@ footer section {
 }
 
 .footer-logo {
-  width: 220px;
+  width: 22rem;
 }
 
 .icon {
-  width: 40px;
+  width: 4rem;
 }
 
 .icon-small {
-  width: 20px;
+  width: 2rem;
 }
 
 .align-vertical {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 }
 
 .hours p {
-  margin: 8px 0;
+  margin: 0.8rem 0;
   color: #634832;
-  font-size: 14px;
+}
+
+.hours h4 {
+  margin-top: 1.2rem;
+}
+
+.about {
+  margin: auto 0;
 }
 
 .about a {
   text-decoration: none;
   color: #634832;
   font-weight: 600;
-  margin-top: 8px;
-}
-
-.scrollTop a {
-  padding: 24px;
-  color: #636363;
-  border-radius: 10px;
-  border: 2px solid #636363;
-  width: fit-content;
-}
-
-.scrollTop a:hover {
-  background-color: #c9aa91;
-}
-
-.scrollTop img {
-  width: 28px;
+  margin-top: 0.8rem;
 }
 
 @media only screen and (max-width: 780px) {
-  .page {
-    padding: 0;
+  html {
+    font-size: 50%;
   }
 
-  header {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    padding: 24px 0;
+  .hero__title {
+    font-size: 4rem;
   }
 
-  header h1 {
-    font-size: 36px;
+  .hero__logo {
+    height: 12rem;
   }
 
-  .logo {
-    position: static;
+  .hero__slogan {
+    font-size: 2.4rem;
+  }
+
+  .menu__title {
+    font-size: 3rem;
+  }
+
+  .menu__side-front {
+    display: none;
+  }
+
+  .menu__side-back {
+    transform: rotateY(0);
   }
 
   footer {
@@ -224,11 +252,5 @@ footer section {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .scrollTop {
-    position: absolute;
-    right: 50px;
-    bottom: 50px;
   }
 }
